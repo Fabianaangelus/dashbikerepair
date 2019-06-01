@@ -1,0 +1,116 @@
+<!DOCname html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="static/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="static/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="static/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> 
+
+    <style>
+      body {
+        background-color: #343E40
+      }
+    </style>
+
+</head>
+<body>
+
+  <section class="content">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <div class="box box-light">
+        
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro Oficina</h3>
+        </div>
+
+        <form role="form" action="cadastrarOficina" method="POST">
+          <div class="box-body">
+            
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input name="nome" class="form-control" placeholder="Nome oficina">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" class="form-control" id="{{variavel}}" placeholder="Email">
+              </div>
+  
+              <div class="form-group">
+                <label for="senha">Senha</label>
+                <input name="senha" class="form-control" id="{{variavel}}" placeholder="Senha">
+              </div>
+  
+              <div class="form-group">
+                <label for="cpfCnpj">CNPJ</label>
+                <input name="cpfCnpj" class="form-control" id="{{variavel}}" placeholder="CNPJ">
+              </div>
+  
+              <div class="form-group">
+                <label for="horarioFuncionamento">Horário de funcionamento</label>
+                <input name="horarioFuncionamento" class="form-control" id="{{variavel}}" placeholder="Horário de funcionamento">
+              </div>
+          
+              <div class="row">
+              
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cep">CEP</label>
+                      <input name="cep" class="form-control" id="{{variavel}}" placeholder="CEP">
+                    </div>
+                  </div>
+    
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="numero">Número</label>
+                      <input name="numero" class="form-control" id="{{variavel}}" placeholder="Número">
+                    </div>
+                  </div>
+                    
+                </div>
+
+              <div class="row">
+              
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input name="latitude" class="form-control" id="{{variavel}}" placeholder="Latitude">
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input name="longitude" class="form-control" id="{{variavel}}" placeholder="Longitude">
+                  </div>
+                </div>
+                  
+              </div>
+            
+          <div class="box-footer">
+            <button type="submit" class="btn btn-light">Enviar</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+    
+    <div class="col-md-4"></div>
+
+  </section>
+
+</body>
+</html>
