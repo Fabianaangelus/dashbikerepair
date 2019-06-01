@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<header>
+
+     <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
+     <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
+     <link rel="stylesheet" href="static/dist/css/skins/_all-skins.min.css">
+     <link rel="stylesheet" href="static/bower_components/morris.js/morris.css">
+     <link rel="stylesheet" href="static/bower_components/jvectormap/jquery-jvectormap.css">
+     <link rel="stylesheet" href="static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+     <link rel="stylesheet" href="static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+     <link rel="stylesheet" href="static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> 
+</header>
+<body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
+        <div class="wrapper" style="height: auto; min-height: 100%;">
+        
+          <header class="main-header">
+            <a href="Formulario.html" class="logo">
+              <span class="logo-mini"><b>A</b>LT</span>
+              <span class="logo-lg"><b>Bike Repair</b></span>
+            </a>
+            <nav class="navbar navbar-static-top">
+              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+              </a>
+              <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="label label-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="header">Você tem 4 mensagens</li>
+                      <li>
+                        <ul class="menu">
+                          <li>  
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                              </div>
+                              <h4>
+                                João
+                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>A corrente da bike chegou?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="static/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                              </div>
+                              <h4>
+                                Amanda
+                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                              </h4>
+                              <p>Troca pneu?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="static/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                              </div>
+                              <h4>
+                                Joana
+                                <small><i class="fa fa-clock-o"></i> Today</small>
+                              </h4>
+                              <p>A corrente da bike chegou?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="static/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                              </div>
+                              <h4>
+                                Vanessa
+                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                              </h4>
+                              <p>Troca câmbio?</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer"><a href="#">Ver todas as mensagens</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bell-o"></i>
+                      <span class="label label-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="header">Você tem 10 notificações</li>
+                      <li>
+                        <ul class="menu">
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-users text-aqua"></i> 5 novos contatos hoje
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-warning text-yellow"></i> 3 orçamentos pendentes
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-shopping-cart text-green"></i> 25 compras efetuadas
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-user text-red"></i> Você alterou seu avatar
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer"><a href="#">Ver todas as notificações</a></li>
+                    </ul>
+                  </li>
+                                  <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <img src="static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                      <span class="hidden-xs">João dos Santos</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <!-- User image -->
+                      <li class="user-header">
+                        <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        
+                        <p>
+                         Oficina do João 
+                          <small>João dos Santos</small>
+                        </p>
+                      </li>
+                  <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </header>
+          <aside class="main-sidebar">
+            <section class="sidebar" style="height: auto;">
+              <div class="user-panel">
+                <div class="pull-left image">
+                  <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                  <p>Oficina do João</p>
+                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+              </div>
+              <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                  <input type="text" name="q" class="form-control" placeholder="Search...">
+                  <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </span>
+                </div>
+              </form>
+              <!-- /.search form -->
+              <!-- sidebar menu: : style can be found in sidebar.less -->
+              <ul class="sidebar-menu tree" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
+                <li class="active treeview menu-open">
+                  <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Orçamentos</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Atendidos</a></li>
+                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Rejeitados</a></li>
+                  </ul>
+                </li>
+                <li class="active treeview menu-open">
+                    <a href="#">
+                      <i class="fa fa-dashboard"></i> <span>Produto</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href="index.html"><i class="fa fa-circle-o"></i>Cadastro</a></li>
+                    </ul>
+                  </li>
+                  <li class="active treeview menu-open">
+                      <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Reboque</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="index.html"><i class="fa fa-circle-o"></i>Atendido</a></li>
+                        <li><a href="index.html"><i class="fa fa-circle-o"></i>Rejeitado</a></li>
+                      </ul>
+                    </li>      
+          </aside>
+          <div class="content-wrapper" style="min-height: 916px;">
+            <section class="content-header"></section>
+              <ol class="breadcrumb">
+              </ol>
+            </section>
+            <section class="content">
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+        
+                    <div class="info-box-content">
+                      <span class="info-box-text">Atendidos</span>
+                      <span class="info-box-number">90<small>%</small></span>
+                    </div>
+                  </div>
+                  <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
+        
+                    <div class="info-box-content">
+                      <span class="info-box-text">Rejeitados</span>
+                      <span class="info-box-number">10<small>%</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+        
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-blue"><i class="fa fa-truck"></i></span>
+        
+                    <div class="info-box-content">
+                      <span class="info-box-text">Atendidos</span>
+                      <span class="info-box-number">55<small>%</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa fa-truck"></i></span>
+        
+                    <div class="info-box-content">
+                      <span class="info-box-text">Rejeitados</span>
+                      <span class="info-box-number">45<small>%</small></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <div class=".col-xs">
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Relatório de Vendas</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-wrench"></i></button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <p class="text-center">
+                            <strong>Vendas: 2 Jan, 2019 - 30 Jun, 2019</strong>
+                          </p>
+        
+                          <div class="chart">
+                            <canvas id="salesChart" style="height: 180px; width: 703px;" width="703" height="180"></canvas>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <p class="text-center">
+                            <strong>Meta Completa</strong>
+                          </p>
+        
+                          <div class="progress-group">
+                            <span class="progress-text">Produtos Adicionados no carrinho</span>
+                            <span class="progress-number"><b>160</b>/200</span>
+        
+                            <div class="progress sm">
+                              <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                            </div>
+                          </div>
+                            <div class="progress-group">
+                            <span class="progress-text">Vendas Concluídas</span>
+                            <span class="progress-number"><b>310</b>/400</span>
+        
+                            <div class="progress sm">
+                              <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
+                            </div>
+                          </div>
+                          <div class="progress-group">
+                            <span class="progress-text">Orçamentos atendidos</span>
+                            <span class="progress-number"><b>250</b>/500</span>
+        
+                            <div class="progress sm">
+                              <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                            </div>
+                            <div class="progress-group">
+                                <span class="progress-text">Reboques atendidos</span>
+                                <span class="progress-number"><b>250</b>/500</span>
+            
+                                <div class="progress sm">
+                                  <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
+                                </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                          <div class="description-block border-right">
+                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
+                            <h5 class="description-header">R$15.210,43</h5>
+                            <span class="description-text">TOTAL RECEITA</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                          <div class="description-block border-right">
+                            <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
+                            <h5 class="description-header">R$2.390,90</h5>
+                            <span class="description-text">CUSTO TOTAL</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                          <div class="description-block border-right">
+                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
+                            <h5 class="description-header">$12.820,43</h5>
+                            <span class="description-text">LUCRO TOTAL</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                          <div class="description-block">
+                            <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
+                            <h5 class="description-header">1200</h5>
+                            <span class="description-text">OBJETIVO FINAL</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <!-- DIRECT CHAT -->
+                      <div class="box box-warning direct-chat direct-chat-warning">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Chat</h3>
+        
+                          <div class="box-tools pull-right">
+                            <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 Novas Mensagens">3</span>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
+                              <i class="fa fa-comments"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="box-body">
+                          <div class="direct-chat-messages">
+                            <div class="direct-chat-msg">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-left">Zeca Ciclista</span>
+                                <span class="direct-chat-timestamp pull-right">23 Jan 14:00</span>
+                              </div>
+                              <img class="direct-chat-img" src="static/dist/img/user1-128x128.jpg" alt="message user image">
+                              <div class="direct-chat-text">
+                                Boa tarde! Gostaria de solicitar um orçamento?
+                              </div>
+                            </div>
+                            <div class="direct-chat-msg right">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-right">Oficina do João</span>
+                                <span class="direct-chat-timestamp pull-left">23 Jan 14:05 </span>
+                              </div>
+                              <img class="direct-chat-img" src="static/dist/img/user3-128x128.jpg" alt="message user image">
+
+                              <div class="direct-chat-text">
+                                Boa tarde! Claro! Em que posso ajudar?
+                              </div>
+                            </div>
+                            <div class="direct-chat-msg">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-left">Zeca Ciclista</span>
+                                <span class="direct-chat-timestamp pull-right">23 Jan 15:37</span>
+                              </div>
+                              <img class="direct-chat-img" src="static/dist/img/user1-128x128.jpg" alt="message user image">
+
+                              <div class="direct-chat-text">
+                                Gostaria de valor para troca de freio e pneu.
+                              </div>
+                            </div>
+                            <div class="direct-chat-msg right">
+                              <div class="direct-chat-info clearfix">
+                                <span class="direct-chat-name pull-right">Oficina do João</span>
+                                <span class="direct-chat-timestamp pull-left">23 Jan 16:10</span>
+                              </div>
+                              <img class="direct-chat-img" src="static/dist/img/user3-128x128.jpg" alt="message user image">
+
+                              <div class="direct-chat-text">
+                                Vamos fazer o levantamento e te passamos os valores.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="direct-chat-contacts">
+                            <ul class="contacts-list">
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user1-128x128.jpg" alt="User Image">
+        
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Zeca Ciclista
+                                          <small class="contacts-list-date pull-right">2/28/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">Fico no aguardo</span>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user7-128x128.jpg" alt="User Image">
+
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Sarah 
+                                          <small class="contacts-list-date pull-right">2/23/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">Gostaria de saber o prazo de entrega</span>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user3-128x128.jpg" alt="User Image">
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Nadia 
+                                          <small class="contacts-list-date pull-right">2/20/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">Passarei as 16 para retirar!</span>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user5-128x128.jpg" alt="User Image">
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Nora 
+                                          <small class="contacts-list-date pull-right">2/10/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">Obrigada! O serviço ficou ótimo.</span>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user6-128x128.jpg" alt="User Image">
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          José
+                                          <small class="contacts-list-date pull-right">1/27/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">Obrigada pelas informações!</span>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img class="contacts-list-img" src="static/dist/img/user8-128x128.jpg" alt="User Image">
+                                  <div class="contacts-list-info">
+                                        <span class="contacts-list-name">
+                                          Cassiano
+                                          <small class="contacts-list-date pull-right">1/4/2015</small>
+                                        </span>
+                                    <span class="contacts-list-msg">No aguardo do orçamento.</span>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="box-footer">
+                          <form action="#" method="post">
+                            <div class="input-group">
+                              <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                              <span class="input-group-btn">
+                                    <button type="button" class="btn btn-warning btn-flat">Enviar</button>
+                                  </span>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box-footer text-center">
+                          <a href="javascript:void(0)" class="uppercase">Ver todos usuários</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box box-info">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Últimas OS</h3>
+        
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="table-responsive">
+                        <table class="table no-margin">
+                          <thead>
+                          <tr>
+                            <th>Ordem de Serviço</th>
+                            <th>Item</th>
+                            <th>Status</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS9842</a></td>
+                            <td>Alavanca de câmbio</td>
+                            <td><span class="label label-success">Entregue</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS1848</a></td>
+                            <td>Manete de freio</td>
+                            <td><span class="label label-warning">Pendente</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS7429</a></td>
+                            <td>Quadro</td>
+                            <td><span class="label label-success">Entregue</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS7429</a></td>
+                            <td>Suspensão dianteira</td>
+                            <td><span class="label label-info">Processando</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS1848</a></td>
+                            <td>Corrente</td>
+                            <td><span class="label label-warning">Pendente</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS7429</a></td>
+                            <td>Câmbio traseiro</td>
+                            <td><span class="label label-success">Entregue</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><a href="pages/examples/invoice.html">OS9842</a></td>
+                            <td>Raio</td>
+                            <td><span class="label label-success">Entregue</span></td>
+                            <td>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="box-footer clearfix">
+                      <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Incluir nova ordem de serviço</a>
+                      <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Ver todos</a>
+                    </div>
+                  </div>
+                  <div class="box box-info">
+                      <div class="box-header with-border">
+
+                        <h3 class="box-title">Produtos adicionados recente</h3>
+                        <div class="box-tools pull-right">
+                          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                          </button>
+                          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                      </div>
+                      <div class="box-body" style="">
+                        <div class="table-responsive">
+                          <table class="table no-margin">
+                            <thead>
+                            <tr>
+                              <th>Produto adicionado</th>
+                              <th>Descrição</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td><a href="pages/examples/invoice.html">Alavanca</a></td>
+                              <td>Alavanca de câmbio</td>
+                              <td><span class="label label-success">R$ 150,00</span></td>
+                              <td>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a href="pages/examples/invoice.html">Manete</a></td>
+                              <td>Manete de freio</td>
+                              <td><span class="label label-success">R$ 200,00</span></td>
+                              <td>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a href="pages/examples/invoice.html">Quadro</a></td>
+                              <td>Quadro</td>
+                              <td><span class="label label-success">R$ 100,00</span></td>
+                              <td>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a href="pages/examples/invoice.html">Suspensão</a></td>
+                              <td>Suspensão dianteira</td>
+                              <td><span class="label label-success">R$ 180,00</span></td>
+                              <td>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="box-footer clearfix" style="">
+                        <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Incluir novos produtos</a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Excluir</a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Editar</a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+                </section>
+                
+              </div>
+            </section>
+          </div>
+          <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+              <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright © 2018-2019 <a href="https://wwww.bikerepair.com.br">Bike Repair</a>.</strong> All rights
+            reserved.
+          </footer>
+        </div>
+        <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/static/bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="static/dist/js/adminlte.min.js"></script>
+        <script src="static/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <script src="static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="static/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="static/bower_components/chart.js/Chart.js"></script>
+        <script src="static/dist/js/pages/dashboard2.js"></script>
+        <script src="static/dist/js/demo.js"></script>
+        <div class="jvectormap-label"></div></body>
