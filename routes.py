@@ -11,9 +11,9 @@ def login():
         email = request.form['email']
         senha = request.form['senha']
         
-        url = "https://ivjbikerepair.herokuapp.com/loginOficina"
         login = {'email': email, 'senha': senha}
-        retorno = Req.api.post(url, json=login).json()
+        retorno = postRequest("loginOficina", login)
+
         dados = retorno['dados']
         status = retorno['status']
 
@@ -22,6 +22,7 @@ def login():
         else:
             return render_template('error.html',oficina=dados)
         
+
 
 @app.route("/cadastrarOficina", methods=['GET', 'POST'])
 def cadastrarOficina():
@@ -34,9 +35,9 @@ def cadastrarOficina():
         cpfCnpj = request.form['cpfCnpj']
         horarioFuncionamento = request.form['horarioFuncionamento']
 
-        url = "https://ivjbikerepair.herokuapp.com/cadastrarOficina"
         cadastro = {'nome': nome, 'email': email, 'senha': senha, 'cpfCnpj': cpfCnpj, 'horarioFuncionamento': horarioFuncionamento}
-        retorno = Req.api.post(url, json=cadastro).json()
+        retorno = postRequest("cadastrarOficina", cadastro)
+
         dados = retorno['dados']
         status = retorno['status']
 
@@ -49,12 +50,12 @@ def cadastrarOficina():
             cep = int(request.form['cep'])
             numero = int(request.form['numero'])
 
-            url2 = "https://ivjbikerepair.herokuapp.com/cadastrarEndereco"
             endereco = {"latitude":latitude, "longitude":longitude, "cep":cep, "numero":numero}
             oficina2 = {"email": email}
+            
             json = {"endereco": endereco, "oficina": oficina2}
+            retornoE = postRequest("cadastrarEndereco", json)
 
-            retornoE = Req.api.post(url2, json=json).json()
             dadosE = retornoE['dados']
             statusE = retornoE['status']
 
@@ -74,10 +75,15 @@ def cadastrarOficina():
 
 @app.route("/cadastrarProduto")
 def cadastrarProduto():
-    return render_template('Dashboard.html',oficina=dados)
+    return render_template('cadastrarProduto.html')
 
 @app.route("/dashboard")
 def dashboard(email, senha):
     return render_template('Dashboard.html',oficina=dados)
 
 
+
+def postRequest(caminho, json):
+    url = "https://ivjbikerepair.herokuapp.com/" + caminho
+    resposta = Req.api.post(url, json=json).json()
+    return resposta
