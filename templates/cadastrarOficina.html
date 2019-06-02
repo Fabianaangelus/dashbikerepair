@@ -58,9 +58,21 @@
                 <input name="cpfCnpj" class="form-control" id="{{variavel}}" placeholder="CNPJ">
               </div>
   
-              <div class="form-group">
-                <label for="horarioFuncionamento">Horário de funcionamento</label>
-                <input name="horarioFuncionamento" class="form-control" id="{{variavel}}" placeholder="Horário de funcionamento">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inicio">Horário de abertura</label>
+                    <input name="inicio" class="form-control" placeholder="Horário de abertura">
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="fim">Horário de fechamento</label>
+                    <input name="fim" class="form-control" placeholder="Horário de fechamento">
+                  </div>
+                </div>
+                  
               </div>
           
               <div class="row">
@@ -101,6 +113,7 @@
             
           <div class="box-footer">
             <button type="submit" class="btn btn-light">Enviar</button>
+            <button class="btn"><a href="login">Voltar</a></button>
           </div>
 
         </form>

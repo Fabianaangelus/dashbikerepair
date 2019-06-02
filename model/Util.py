@@ -1,0 +1,3 @@
+oficinaEscolhida = ""
+
+produtos = ""

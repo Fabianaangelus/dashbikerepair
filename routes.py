@@ -3,6 +3,8 @@ from flask import render_template, request
 
 import requests as Req
 
+from model import Util
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -17,8 +19,19 @@ def login():
         dados = retorno['dados']
         status = retorno['status']
 
+        Util.oficinaEscolhida = dados
+
+        produtos = {"email": email}
+        retornoProdutos = postRequest("listarProdutos", produtos)
+
+        dados = retornoProdutos['dados']
+
+        Util.produtos = dados
+
+        print(Util.produtos)
+
         if(status == "OK"):
-            return render_template('Dashboard.html',oficina=dados)
+            return render_template('Dashboard.html',oficina=dados, produtos=Util.produtos)
         else:
             return render_template('error.html',oficina=dados)
         
@@ -33,7 +46,7 @@ def cadastrarOficina():
         email = request.form['email']
         senha = request.form['senha']
         cpfCnpj = request.form['cpfCnpj']
-        horarioFuncionamento = request.form['horarioFuncionamento']
+        horarioFuncionamento = request.form['inicio']+"-"+request.form['fim']
 
         cadastro = {'nome': nome, 'email': email, 'senha': senha, 'cpfCnpj': cpfCnpj, 'horarioFuncionamento': horarioFuncionamento}
         retorno = postRequest("cadastrarOficina", cadastro)
@@ -62,10 +75,8 @@ def cadastrarOficina():
             if(statusE == "OK"):
                 return render_template('login.html')
             else:
-                print("endereco")
                 return render_template('error.html')
         else:
-            print("cadastro")
             return render_template('error.html')
     
     
@@ -73,9 +84,26 @@ def cadastrarOficina():
     print(nome)
     
 
-@app.route("/cadastrarProduto")
+@app.route("/cadastrarProduto", methods=['GET', 'POST'])
 def cadastrarProduto():
-    return render_template('cadastrarProduto.html')
+    if request.method == 'GET':
+        return render_template('cadastrarProduto.html')
+    else:
+        nome = request.form['nome']
+        preco = float(request.form['preco'])
+        descricao = request.form['descricao']
+        categoria = request.form['categoria']
+        precoCancelamento = float(request.form['precoCancelamento'])
+
+        produto = {"nome": nome, "preco": preco, "descricao": descricao, "categoria": categoria, "precoCancelamento": precoCancelamento}
+        oficina = {"email": Util.oficinaEscolhida["email"]}
+
+        json = {"produto": produto, "oficina": oficina}
+
+        postRequest("cadastrarProduto",json)
+
+        return render_template('Dashboard.html',oficina=Util.oficinaEscolhida,produtos=Util.produtos)
+
 
 @app.route("/dashboard")
 def dashboard(email, senha):
