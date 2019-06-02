@@ -24,9 +24,9 @@ def login():
         produtos = {"email": email}
         retornoProdutos = postRequest("listarProdutos", produtos)
 
-        dados = retornoProdutos['dados']
+        dadosP = retornoProdutos['dados']
 
-        Util.produtos = dados
+        Util.produtos = dadosP
 
         print(Util.produtos)
 
