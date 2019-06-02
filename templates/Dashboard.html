@@ -14,7 +14,6 @@
 </header>
 <body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
         <div class="wrapper" style="height: auto; min-height: 100%;">
-        
           <header class="main-header">
             <a href="Formulario.html" class="logo">
               <span class="logo-mini"><b>A</b>LT</span>
@@ -26,68 +25,6 @@
               </a>
               <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                  <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-envelope-o"></i>
-                      <span class="label label-success">4</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li class="header">Você tem 4 mensagens</li>
-                      <li>
-                        <ul class="menu">
-                          <li>  
-                            <a href="#">
-                              <div class="pull-left">
-                                <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                              </div>
-                              <h4>
-                                João
-                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                              </h4>
-                              <p>A corrente da bike chegou?</p>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <div class="pull-left">
-                                <img src="static/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                              </div>
-                              <h4>
-                                Amanda
-                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                              </h4>
-                              <p>Troca pneu?</p>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <div class="pull-left">
-                                <img src="static/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                              </div>
-                              <h4>
-                                Joana
-                                <small><i class="fa fa-clock-o"></i> Today</small>
-                              </h4>
-                              <p>A corrente da bike chegou?</p>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <div class="pull-left">
-                                <img src="static/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                              </div>
-                              <h4>
-                                Vanessa
-                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                              </h4>
-                              <p>Troca câmbio?</p>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="footer"><a href="#">Ver todas as mensagens</a></li>
-                    </ul>
-                  </li>
                   <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-bell-o"></i>
@@ -121,25 +58,7 @@
                       </li>
                       <li class="footer"><a href="#">Ver todas as notificações</a></li>
                     </ul>
-                  </li>
-                                  <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <img src="static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                      <span class="hidden-xs">João dos Santos</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <!-- User image -->
-                      <li class="user-header">
-                        <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        
-                        <p>
-                         Oficina do João 
-                          <small>João dos Santos</small>
-                        </p>
-                      </li>
-                  <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                  </li>
+                  </li>     
                 </ul>
               </div>
             </nav>
@@ -148,25 +67,12 @@
             <section class="sidebar" style="height: auto;">
               <div class="user-panel">
                 <div class="pull-left image">
-                  <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  <img src= "" >
                 </div>
-                <div class="pull-left info">
-                  <p>Oficina do João</p>
-                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <div class="pull-center info">
+                  <p>{{oficina.nome}}</p>
                 </div>
               </div>
-              <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="Search...">
-                  <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                </div>
-              </form>
-              <!-- /.search form -->
-              <!-- sidebar menu: : style can be found in sidebar.less -->
               <ul class="sidebar-menu tree" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview menu-open">
@@ -189,7 +95,7 @@
                       </span>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href="index.html"><i class="fa fa-circle-o"></i>Cadastro</a></li>
+                      <li><a href="cadastrarProduto"><i class="fa fa-circle-o"></i>Cadastro</a></li>
                     </ul>
                   </li>
                   <li class="active treeview menu-open">
@@ -218,7 +124,7 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">90<small>%</small></span>
+                      <span class="info-box-number">{{oficina.qtdOrcamentosAtendidos}}<small>%</small></span>
                     </div>
                   </div>
                   <!-- /.info-box -->
@@ -230,7 +136,7 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">10<small>%</small></span>
+                      <span class="info-box-number">{{qtdOrcamentosRejeitados}}<small>%</small></span>
                     </div>
                   </div>
                 </div>
@@ -239,10 +145,10 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="info-box">
                     <span class="info-box-icon bg-blue"><i class="fa fa-truck"></i></span>
-        
+       
                     <div class="info-box-content">
                       <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">55<small>%</small></span>
+                      <span class="info-box-number">{{oficina.qtdReboqueAtendidos}}<small>%</small></span>
                     </div>
                   </div>
                 </div>
@@ -252,7 +158,7 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">45<small>%</small></span>
+                      <span class="info-box-number">{{oficina.qtdReboquesRejeitados}}<small>%</small></span>
                     </div>
                   </div>
                 </div>
@@ -261,7 +167,7 @@
                 <div class="col-md-6">
                   <div class="box">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Relatório de Vendas</h3>
+                      <h3 class="box-title"> Relatório de Vendas</h3>
                       <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                         </button>
@@ -285,46 +191,20 @@
                           <p class="text-center">
                             <strong>Vendas: 2 Jan, 2019 - 30 Jun, 2019</strong>
                           </p>
-        
                           <div class="chart">
                             <canvas id="salesChart" style="height: 180px; width: 703px;" width="703" height="180"></canvas>
                           </div>
                         </div>
-                        <div class="col-md-4">
-                          <p class="text-center">
-                            <strong>Meta Completa</strong>
-                          </p>
-        
-                          <div class="progress-group">
-                            <span class="progress-text">Produtos Adicionados no carrinho</span>
-                            <span class="progress-number"><b>160</b>/200</span>
-        
-                            <div class="progress sm">
-                              <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                            </div>
-                          </div>
+                        <div class="col-md-5">                        
                             <div class="progress-group">
                             <span class="progress-text">Vendas Concluídas</span>
                             <span class="progress-number"><b>310</b>/400</span>
-        
                             <div class="progress sm">
                               <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
                             </div>
                           </div>
                           <div class="progress-group">
-                            <span class="progress-text">Orçamentos atendidos</span>
-                            <span class="progress-number"><b>250</b>/500</span>
-        
-                            <div class="progress sm">
-                              <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                            </div>
                             <div class="progress-group">
-                                <span class="progress-text">Reboques atendidos</span>
-                                <span class="progress-number"><b>250</b>/500</span>
-            
-                                <div class="progress sm">
-                                  <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
-                                </div> 
                           </div>
                         </div>
                       </div>
@@ -332,31 +212,18 @@
                     <div class="box-footer">
                       <div class="row">
                         <div class="col-sm-3 col-xs-6">
+                          <div class="description-block border-right"></div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
                           <div class="description-block border-right">
-                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                            <h5 class="description-header">R$15.210,43</h5>
-                            <span class="description-text">TOTAL RECEITA</span>
                           </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                           <div class="description-block border-right">
-                            <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                            <h5 class="description-header">R$2.390,90</h5>
-                            <span class="description-text">CUSTO TOTAL</span>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                            <h5 class="description-header">$12.820,43</h5>
-                            <span class="description-text">LUCRO TOTAL</span>
                           </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                           <div class="description-block">
-                            <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                            <h5 class="description-header">1200</h5>
-                            <span class="description-text">OBJETIVO FINAL</span>
                           </div>
                         </div>
                       </div>
@@ -519,9 +386,6 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="box-footer text-center">
-                          <a href="javascript:void(0)" class="uppercase">Ver todos usuários</a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -621,37 +485,22 @@
                             <tr>
                               <th>Produto adicionado</th>
                               <th>Descrição</th>
+                              <th>Valor</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                              <td><a href="pages/examples/invoice.html">Alavanca</a></td>
-                              <td>Alavanca de câmbio</td>
-                              <td><span class="label label-success">R$ 150,00</span></td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><a href="pages/examples/invoice.html">Manete</a></td>
-                              <td>Manete de freio</td>
-                              <td><span class="label label-success">R$ 200,00</span></td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><a href="pages/examples/invoice.html">Quadro</a></td>
-                              <td>Quadro</td>
-                              <td><span class="label label-success">R$ 100,00</span></td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><a href="pages/examples/invoice.html">Suspensão</a></td>
-                              <td>Suspensão dianteira</td>
-                              <td><span class="label label-success">R$ 180,00</span></td>
-                              <td>
-                              </td>
-                            </tr>
+                            
+{%for produto in produtos%}
+<tr>
+  <td>{{produto.nome}}</td>
+  <td>{{produto.descricao}}</td>
+  <td><span class="label label-success">{{produto.preco}}</span></td>
+  <td>
+  </td>
+</tr>
+{%endfor%}
+
+                            ###
                             </tbody>
                           </table>
                         </div>
@@ -669,14 +518,8 @@
               </div>
             </section>
           </div>
-          <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-              <b>Version</b> 2.4.0
-            </div>
-            <strong>Copyright © 2018-2019 <a href="https://wwww.bikerepair.com.br">Bike Repair</a>.</strong> All rights
-            reserved.
+          <footer>   
           </footer>
-        </div>
         <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/static/bower_components/fastclick/lib/fastclick.js"></script>
