@@ -28,10 +28,10 @@ def login():
 
         Util.produtos = dadosP
 
-        print(Util.produtos)
+        print(Util.oficinaEscolhida)
 
         if(status == "OK"):
-            return render_template('Dashboard.html',oficina=dados, produtos=Util.produtos)
+            return render_template('Dashboard.html',oficina=Util.oficinaEscolhida, produtos=Util.produtos)
         else:
             return render_template('error.html',oficina=dados)
         
@@ -79,10 +79,6 @@ def cadastrarOficina():
         else:
             return render_template('error.html')
     
-    
-    nome = request.form['nome']
-    print(nome)
-    
 
 @app.route("/cadastrarProduto", methods=['GET', 'POST'])
 def cadastrarProduto():
@@ -115,3 +111,10 @@ def postRequest(caminho, json):
     url = "https://ivjbikerepair.herokuapp.com/" + caminho
     resposta = Req.api.post(url, json=json).json()
     return resposta
+
+@app.route("/painelAdmin")
+def painelAdmin():
+    return render_template('painelAdmin.html')
+
+
+

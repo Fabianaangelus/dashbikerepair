@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+<!-- 
 <!DOCTYPE html>
 <header>
 
@@ -62,7 +65,8 @@
                 </ul>
               </div>
             </nav>
-          </header>
+          </header> -->
+          {% block content %}
           <aside class="main-sidebar">
             <section class="sidebar" style="height: auto;">
               <div class="user-panel">
@@ -124,9 +128,9 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">{{oficina.qtdOrcamentosAtendidos}}<small>%</small></span>
+                      <span class="info-box-number">{{ oficina.qntOrcamentosAtendidos }}<small></small></span>
                     </div>
-                  </div>
+                  </div>  
                   <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
@@ -136,7 +140,7 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">{{qtdOrcamentosRejeitados}}<small>%</small></span>
+                      <span class="info-box-number">{{ oficina.qntOrcamentosRejeitados }}<small></small></span>
                     </div>
                   </div>
                 </div>
@@ -148,7 +152,7 @@
        
                     <div class="info-box-content">
                       <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">{{oficina.qtdReboqueAtendidos}}<small>%</small></span>
+                      <span class="info-box-number">{{ oficina.qntReboquesAtendidos }}<small></small></span>
                     </div>
                   </div>
                 </div>
@@ -158,7 +162,7 @@
         
                     <div class="info-box-content">
                       <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">{{oficina.qtdReboquesRejeitados}}<small>%</small></span>
+                      <span class="info-box-number">{{ oficina.qntReboquesRejeitados }}<small></small></span>
                     </div>
                   </div>
                 </div>
@@ -518,7 +522,8 @@
               </div>
             </section>
           </div>
-          <footer>   
+          {% endblock %}
+          <!-- <footer>   
           </footer>
         <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -531,4 +536,4 @@
         <script src="static/bower_components/chart.js/Chart.js"></script>
         <script src="static/dist/js/pages/dashboard2.js"></script>
         <script src="static/dist/js/demo.js"></script>
-        <div class="jvectormap-label"></div></body>
+        <div class="jvectormap-label"></div></body> -->
