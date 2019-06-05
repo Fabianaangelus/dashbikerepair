@@ -12,26 +12,32 @@ def login():
     else:
         email = request.form['email']
         senha = request.form['senha']
-        
+
         login = {'email': email, 'senha': senha}
-        retorno = postRequest("loginOficina", login)
+        retornoLogin = postRequest("loginOficina", login)
+        statusLogin = retornoLogin['status']
+        Util.oficinaEscolhida = retornoLogin['dados']
+        
+        if(statusLogin == "OK"):
 
-        dados = retorno['dados']
-        status = retorno['status']
+            produtos = {"email": email}
+            retornoProdutos = postRequest("listarProdutos", produtos)
+            Util.produtos = retornoProdutos['dados']
 
-        Util.oficinaEscolhida = dados
 
-        produtos = {"email": email}
-        retornoProdutos = postRequest("listarProdutos", produtos)
+            ordemServico = {"email": email}
+            retornoOrdemServico = postRequest("listarOrdemServicoOficina", ordemServico)
+            Util.ordemServicos = retornoOrdemServico['dados']
 
-        dadosP = retornoProdutos['dados']
+            chats = {"id" :Util.oficinaEscolhida["id"],"valor" :1}
+            retornoChats = postRequest("retornaChat", chats)
+            Util.chats = retornoChats['dados']
+            print(Util.chats)
 
-        Util.produtos = dadosP
-
-        print(Util.oficinaEscolhida)
-
-        if(status == "OK"):
-            return render_template('Dashboard.html',oficina=Util.oficinaEscolhida, produtos=Util.produtos)
+            return render_template('Dashboard.html',    oficina=Util.oficinaEscolhida, 
+                                                        produtos=Util.produtos, 
+                                                        ordemServicos=Util.ordemServicos,
+                                                        chats=Util.chats)
         else:
             return render_template('error.html',oficina=dados)
         
