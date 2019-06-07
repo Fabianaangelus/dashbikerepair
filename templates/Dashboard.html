@@ -1,5 +1,12 @@
 {% extends "base.html" %} {% block content %}
+
 <div class="content-wrapper" style="min-height: 916px;">
+    <div id="labelsGrafico">
+        {{label}}
+    </div>
+    <div id="dadosGrafico">
+        {{valores}}
+    </div>
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
@@ -256,7 +263,6 @@
                             <th>Produto adicionado</th>
                             <th>Descrição</th>
                             <th>Valor</th>
-                            <th>Deletar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -266,7 +272,6 @@
                             <td>{{produto.nome}}</td>
                             <td>{{produto.descricao}}</td>
                             <td><span class="label label-success">{{produto.preco}}</span></td>
-                            <td><a href="#"><span class="label label-danger">x</span></a></td></td>
                         </tr>
                         {%endfor%}
 
@@ -276,4 +281,9 @@
         </div>
     </div>
 </div>
+
+<script>
+document.getElementById("labelsGrafico").style.visibility = "hidden";
+document.getElementById("dadosGrafico").style.visibility = "hidden";
+</script>
 {% endblock %}

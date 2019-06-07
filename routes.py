@@ -3,7 +3,38 @@ from server import app
 from flask import render_template, redirect, request
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['GET']) 
+def index():
+    oficinas = Util.getRequest("listarOficinas")['dados']
+    
+    oficinasAgrupadas = []
+    count = 0
+    grupo3 = []
+    for oficina in oficinas:
+        if(len(grupo3) == 3):
+            grupo3 = []
+
+        oficina["teste"] = True
+        grupo3.append(oficina)
+
+        if(count == 2):
+            print(grupo3)
+            oficinasAgrupadas.append(grupo3)
+            count = 0
+
+        count += 1
+
+    return render_template('index.html', oficinas=oficinasAgrupadas)
+
+@app.route("/oficina/<id>", methods=['GET']) 
+def exibirOficina(id):
+    oficina = {'id': int(id)}
+    retornoOficina = Util.postRequest("buscarOficina", oficina)
+    print("###########")
+    print(retornoOficina)
+    return render_template('oficina.html', oficina=retornoOficina)
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
@@ -18,9 +49,9 @@ def login():
         retornoLogin = Util.postRequest("loginOficina", login)
         statusLogin = retornoLogin['status']
         Util.oficinaEscolhida = retornoLogin['dados']
-
-        print(Util.oficinaEscolhida)
         
+        print(statusLogin)
+
         if(statusLogin == "OK"):
             return redirect("/dashboard")
         else:
@@ -36,16 +67,49 @@ def dashboard():
     retornoOrdemServico = Util.postRequest("listarOrdemServicoOficina", ordemServico)
     Util.ordemServicos = retornoOrdemServico['dados']
 
+    datasOs = []
+    meses = []
+    quantidade = []
+
+    for os in Util.ordemServicos:
+        valor = str(os['data'])
+        data = ""
+        if(len(valor) == 8):
+            data = valor[2:]
+        else:
+            data = valor[1:]
+
+        mes = data[:2]
+        ano = data[2:]
+
+        datasOs.append(mes+"/"+ano)
+
+    for os in datasOs:
+        adiciona = True
+        for mes in meses:
+            if(mes == os):
+                adiciona = False
+
+        if(adiciona):
+            meses.append(os)
+            quantidade.append(datasOs.count(os))
+
+
+    print(meses)
+    print(quantidade)
+
+
     chats = {"id" :Util.oficinaEscolhida["id"],"valor" :1}
     retornoChats = Util.postRequest("retornaChat", chats)
     Util.chats = retornoChats['dados']
-    print(Util.chats)
 
     return render_template('Dashboard.html',    oficina=Util.oficinaEscolhida, 
                                                 produtos=Util.produtos, 
                                                 ordemServicos=Util.ordemServicos,
                                                 chats=Util.chats,
-                                                mensagens=Util.mensagens)       
+                                                mensagens=Util.mensagens,
+                                                label=str(meses),
+                                                valores=str(quantidade) )       
 
 @app.route("/cadastrarOficina", methods=['GET', 'POST'])
 def cadastrarOficina():
@@ -224,7 +288,23 @@ def enviarMensagem():
 def painelAdmin():
     clientes = Util.getRequest("listarClientes")['dados']
     oficinas = Util.getRequest("listarOficinas")['dados']
-    return render_template('painelAdmin.html')
+
+    efetuados = 0
+    rejeitados = 0
+    users = len(clientes)
+    of = len(oficinas)
+
+    for dados in oficinas:
+        efetuados = efetuados + dados["qntOrcamentosAtendidos"]
+        efetuados = efetuados + dados["qntReboquesAtendidos"]
+
+        rejeitados = rejeitados + dados["qntOrcamentosRejeitados"]
+        rejeitados = rejeitados + dados["qntReboquesRejeitados"]
+
+    return render_template('painelAdmin.html',  efetuados=efetuados,
+                                                rejeitados=rejeitados,
+                                                usuarios=users,
+                                                oficinas=of)
 
 @app.route("/erro", methods=['GET'])
 def telaError():

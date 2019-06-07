@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dash - Bike Repair</title>
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="static/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="static/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="static/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="static/style.css">
+
+    <style>
+        body {
+            background-color: #494949
+        }
+        
+        a {
+            color: black
+        }
+        
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        
+        footer {
+            background-color: #222222;
+            padding: 25px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Bike Repair</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Oficinas</h1>
+            <p>Aproveite as oficinas parceiras da Bike Repair</p>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-3 text-center">
+        <div class="row">
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-10">
+
+                {{oficina}}
+
+            </div>
+
+            <div class="col-md-2"></div>
+
+        </div>
+
+    </div>
+    <br>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+
+</html>

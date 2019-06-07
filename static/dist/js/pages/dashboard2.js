@@ -16,8 +16,14 @@ $(function () {
   // This will get the first returned node in the jQuery collection.
   var salesChart       = new Chart(salesChartCanvas);
 
+
+  //MEU TESTE
+  var labelsGraficoR = $("#labelsGrafico").text().replace("[", "").replace("]", "").replace(/'/g, "").split(",").map(String)
+  var dadosGraficoR = $("#dadosGrafico").text()
+  //TESTE FECHAMENTO
+
   var salesChartData = {
-    labels  : ['teste', 'OI', 'OI', 'OI', 'OI', 'OI', 'OI'],
+    labels  : labelsGraficoR,
     datasets: [
       {
         label               : 'Electronics',
@@ -27,7 +33,7 @@ $(function () {
         pointStrokeColor    : '#c1c7d1',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgb(220,220,220)',
-        data                : [500, 1, 80, 81, 56, 55, 1000]
+        data                : JSON.parse(dadosGraficoR.replace(/'/g, ""))
       }
     ]
   };
