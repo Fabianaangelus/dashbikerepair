@@ -30,9 +30,18 @@ def index():
 def exibirOficina(id):
     oficina = {'id': int(id)}
     retornoOficina = Util.postRequest("buscarOficina", oficina)
-    print("###########")
-    print(retornoOficina)
-    return render_template('oficina.html', oficina=retornoOficina)
+
+    print("###")
+    print("###")
+    print("###")
+    print(retornoOficina['email'])
+
+    produtos = {"email": retornoOficina['email']}
+    retornoProdutos = Util.postRequest("listarProdutos", produtos)
+    produtos = retornoProdutos['dados']
+
+    return render_template('oficina.html',  oficina=retornoOficina,
+                                            produtos=produtos)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

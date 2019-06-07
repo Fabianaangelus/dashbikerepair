@@ -1,86 +1,91 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<header> 
     <title>Dash - Bike Repair</title>
-    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="static/dist/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="static/bower_components/morris.js/morris.css">
-    <link rel="stylesheet" href="static/bower_components/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <style>
+     <style>
         body {
-            background-color: #494949
+          background-color: #494949
         }
         
         a {
-            color: black
+          color: black
         }
-        
+
         .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
+          margin-bottom: 0;
+          border-radius: 0;
         }
         
-        footer {
-            background-color: #222222;
-            padding: 25px;
+        .jumbotron {
+          
         }
-    </style>
 
-</head>
+        .oficina{
+          background-color: #EEEEEE;
+          border-radius: 10px;
+          margin: 5px;
+          height: 200px;
+        }
 
-<body>
-
+        footer {
+          background-color: #222222;
+          padding: 25px;
+        }
+      </style>
+    </header>
+    <body>
+    
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Bike Repair</a>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="/">Bike Repair</a>
         </div>
+      </div>
     </nav>
-
+    
     <div class="jumbotron">
-        <div class="container text-center">
-            <h1>Oficinas</h1>
-            <p>Aproveite as oficinas parceiras da Bike Repair</p>
-        </div>
+      <div class="container text-center">
+        <h1>{{oficina.nome}}</h1>      
+        <p>{{oficina.descricao}}</p>
+      </div>
     </div>
+      
+    <div class="container-fluid bg-3 text-center">    
+      <div class="row">
 
-    <div class="container-fluid bg-3 text-center">
-        <div class="row">
+        <div class="col-md-2"></div>
 
-            <div class="col-md-2"></div>
-
-            <div class="col-md-10">
-
-                {{oficina}}
-
+        <div class="col-md-8">
+            <h2>Produtos</h2>
+            
+            {%for produto in produtos%}
+            <br>
+            <div>
+                <h3>{{produto.nome}}</h3>
+                <p>{{produto.descricao}}</p>
+                <p><span class="label label-success">{{produto.preco}}</span></p>
             </div>
-
-            <div class="col-md-2"></div>
+            
+            {%endfor%}
 
         </div>
 
-    </div>
-    <br>
+        <div class="col-md-2"></div>
 
+      </div>
+      
+      
+    </div><br>
+    
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+      <p>Footer Teaxt</p>
     </footer>
-
-</body>
-
-</html>
+    
+    </body>
+    </html>
