@@ -17,7 +17,7 @@ $(function () {
   var salesChart       = new Chart(salesChartCanvas);
 
   var salesChartData = {
-    labels  : ['OI', 'OI', 'OI', 'OI', 'OI', 'OI', 'OI'],
+    labels  : ['teste', 'OI', 'OI', 'OI', 'OI', 'OI', 'OI'],
     datasets: [
       {
         label               : 'Electronics',
@@ -117,6 +117,30 @@ $(function () {
     },
     {
       value    : 100,
+      color    : '#d2d6de',
+      highlight: '#d2d6de',
+      label    : 'Navigator'
+    },
+    {
+      value    : 400,
+      color    : '#f39c12',
+      highlight: '#f39c12',
+      label    : 'FireFox'
+    },
+    {
+      value    : 600,
+      color    : '#00c0ef',
+      highlight: '#00c0ef',
+      label    : 'Safari'
+    },
+    {
+      value    : 10,
+      color    : '#3c8dbc',
+      highlight: '#3c8dbc',
+      label    : 'Opera'
+    },
+    {
+      value    : 1000,
       color    : '#d2d6de',
       highlight: '#d2d6de',
       label    : 'Navigator'

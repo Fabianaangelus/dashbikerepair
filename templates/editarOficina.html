@@ -1,0 +1,97 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper" style="height: auto; min-height: 100%;">
+        
+  <div class="content-wrapper" style="min-height: 916px;">
+    
+    
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-6">
+        <h3>Editar informações sobre a Oficina</h3>
+        <form role="form" action="editarOficina" method="POST">
+
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input name="nome" value="{{oficina.nome}}" class="form-control" disabled="disabled">
+            </div>
+          
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input name="email" value="{{oficina.email}}" class="form-control" disabled="disabled">
+            </div>
+          
+            <div class="form-group">
+              <label for="cpfCnpj">CNPJ</label>
+              <input name="cpfCnpj" value="{{oficina.cpfCnpj}}" class="form-control" disabled="disabled">
+            </div>
+          
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inicio">Horário de abertura</label>
+                    <input name="inicio" value="{{inicio}}" class="form-control">
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="fim">Horário de fechamento</label>
+                    <input name="fim" value="{{fim}}" class="form-control">
+                  </div>
+                </div>
+                  
+              </div>
+          
+            <div class="form-group">
+              <label for="descricao">Descrição</label>
+              <input name="descricao" value="{{oficina.descricao}}" class="form-control">
+            </div>
+          
+            <div class="box-footer">
+              <button type="submit" class="btn btn-light">Editar</button>
+            </div>
+          
+          </form>
+
+          </div>
+        
+
+
+    </section>
+    
+    <hr>
+
+    <section class="content">
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Alterar senha</h3>
+          <form role="form" action="alterarSenha" method="POST">
+
+            <div class="form-group">
+              <label for="antiga">Senha antiga</label>
+              <input type="password" name="antiga" class="form-control">
+            </div>
+          
+            <div class="form-group">
+              <label for="nova">Nova senha</label>
+              <input type="password" name="nova" class="form-control">
+            </div>
+          
+            <div class="box-footer">
+              <button type="submit" class="btn btn-light">Alterar</button>
+            </div>
+          
+          </form>
+        </div>
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+</div>
+{% endblock %}

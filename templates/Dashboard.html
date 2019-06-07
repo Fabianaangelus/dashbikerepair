@@ -1,436 +1,280 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<div class="content-wrapper" style="min-height: 916px;">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
-<!-- 
-<!DOCTYPE html>
-<header>
+                <div class="info-box-content">
+                    <span class="info-box-text">Atendidos</span>
+                    <span class="info-box-number">{{ oficina.qntOrcamentosAtendidos }}<small></small></span>
+                </div>
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
 
-     <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
-     <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
-     <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
-     <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
-     <link rel="stylesheet" href="static/dist/css/skins/_all-skins.min.css">
-     <link rel="stylesheet" href="static/bower_components/morris.js/morris.css">
-     <link rel="stylesheet" href="static/bower_components/jvectormap/jquery-jvectormap.css">
-     <link rel="stylesheet" href="static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-     <link rel="stylesheet" href="static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-     <link rel="stylesheet" href="static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> 
-</header>
-<body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
-        <div class="wrapper" style="height: auto; min-height: 100%;">
-          <header class="main-header">
-            <a href="Formulario.html" class="logo">
-              <span class="logo-mini"><b>A</b>LT</span>
-              <span class="logo-lg"><b>Bike Repair</b></span>
-            </a>
-            <nav class="navbar navbar-static-top">
-              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-              </a>
-              <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                  <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-bell-o"></i>
-                      <span class="label label-warning">10</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li class="header">Você tem 10 notificações</li>
-                      <li>
-                        <ul class="menu">
-                          <li>
-                            <a href="#">
-                              <i class="fa fa-users text-aqua"></i> 5 novos contatos hoje
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa fa-warning text-yellow"></i> 3 orçamentos pendentes
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa fa-shopping-cart text-green"></i> 25 compras efetuadas
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa fa-user text-red"></i> Você alterou seu avatar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="footer"><a href="#">Ver todas as notificações</a></li>
-                    </ul>
-                  </li>     
-                </ul>
-              </div>
-            </nav>
-          </header> -->
-          {% block content %}
-          <aside class="main-sidebar">
-            <section class="sidebar" style="height: auto;">
-              <div class="user-panel">
-                <div class="pull-left image">
-                  <img src= "" >
+                <div class="info-box-content">
+                    <span class="info-box-text">Rejeitados</span>
+                    <span class="info-box-number">{{ oficina.qntOrcamentosRejeitados }}<small></small></span>
                 </div>
-                <div class="pull-center info">
-                  <p>{{oficina.nome}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue"><i class="fa fa-truck"></i></span>
+                <button onclick="printarAlgoNaTela()">aaaaaaaaaaaaaaaaa</button>
+                <div class="info-box-content">
+                    <span class="info-box-text">Atendidos</span>
+                    <span class="info-box-number">{{ oficina.qntReboquesAtendidos }}<small></small></span>
                 </div>
-              </div>
-              <ul class="sidebar-menu tree" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class="active treeview menu-open">
-                  <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Orçamentos</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Atendidos</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Rejeitados</a></li>
-                  </ul>
-                </li>
-                <li class="active treeview menu-open">
-                    <a href="#">
-                      <i class="fa fa-dashboard"></i> <span>Produto</span>
-                      <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="cadastrarProduto"><i class="fa fa-circle-o"></i>Cadastro</a></li>
-                    </ul>
-                  </li>
-                  <li class="active treeview menu-open">
-                      <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Reboque</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="index.html"><i class="fa fa-circle-o"></i>Atendido</a></li>
-                        <li><a href="index.html"><i class="fa fa-circle-o"></i>Rejeitado</a></li>
-                      </ul>
-                    </li>      
-          </aside>
-          <div class="content-wrapper" style="min-height: 916px;">
-            <section class="content-header"></section>
-              <ol class="breadcrumb">
-              </ol>
-            </section>
-            <section class="content">
-              <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-        
-                    <div class="info-box-content">
-                      <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">{{ oficina.qntOrcamentosAtendidos }}<small></small></span>
-                    </div>
-                  </div>  
-                  <!-- /.info-box -->
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="fa fa-truck"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Rejeitados</span>
+                    <span class="info-box-number">{{ oficina.qntReboquesRejeitados }}<small></small></span>
                 </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
-        
-                    <div class="info-box-content">
-                      <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">{{ oficina.qntOrcamentosRejeitados }}<small></small></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="clearfix visible-sm-block"></div>
-        
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-blue"><i class="fa fa-truck"></i></span>
-       
-                    <div class="info-box-content">
-                      <span class="info-box-text">Atendidos</span>
-                      <span class="info-box-number">{{ oficina.qntReboquesAtendidos }}<small></small></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-truck"></i></span>
-        
-                    <div class="info-box-content">
-                      <span class="info-box-text">Rejeitados</span>
-                      <span class="info-box-number">{{ oficina.qntReboquesRejeitados }}<small></small></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                  <div class=".col-xs">
-                <div class="col-md-6">
-                  <div class="box">
-                    <div class="box-header with-border">
-                      <h3 class="box-title"> Relatório de Vendas</h3>
-                      <div class="box-tools pull-right">
+            </div>
+        </div>
+    </div>
+    <div class=".col-xs">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Relatório de Vendas</h3>
+                    <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                         </button>
                         <div class="btn-group">
-                          
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                          </ul>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
                         </div>
-                        
-                      </div>
+
                     </div>
-                    <div class="box-body">
-                      <div class="row">
-                        <div class="col-md-8">
-                          <p class="text-center">
-                            <strong>Vendas: 2 Jan, 2019 - 30 Jun, 2019</strong>
-                          </p>
-                          <div class="chart">
-                            <canvas id="salesChart" style="height: 180px; width: 703px;" width="703" height="180"></canvas>
-                          </div>
-                        </div>
-                        <div class="col-md-5">                        
-                            <div class="progress-group">
-                            <span class="progress-text">Vendas Concluídas</span>
-                            <span class="progress-number"><b>310</b>/400</span>
-                            <div class="progress sm">
-                              <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center">
+                                <strong>Vendas: 2 Jan, 2019 - 30 Jun, 2019</strong>
+                            </p>
+                            <div class="chart">
+                                <canvas id="salesChart" style="height: 180px; width: 703px;" width="703" height="180"></canvas>
                             </div>
-                          </div>
-                          <div class="progress-group">
-                            <div class="progress-group">
-                          </div>
                         </div>
-                      </div>
+                        <!--
+                        <div class="col-md-5">
+                            <div class="progress-group">
+                                <span class="progress-text">Vendas Concluídas</span>
+                                <span class="progress-number"><b>310</b>/400</span>
+                                <div class="progress sm">
+                                    <div class="progress-bar progress-bar-blue" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <div class="progress-group">
+                                </div>
+                            </div>
+                        </div>
+                        -->
                     </div>
                     <div class="box-footer">
-                      <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right"></div>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right"></div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <div class="description-block">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                          </div>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                          </div>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block">
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <!-- DIRECT CHAT -->
-                      <div class="box box-warning direct-chat direct-chat-warning">
-                          <div class="box-header with-border">
-                            <h3 class="box-title">Chat</h3>
-          
-                            <div class="box-tools pull-right">
-                              <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 Novas Mensagens">3</span>
-                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                              </button>
-                              <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
-                                <i class="fa fa-comments"></i></button>
-                              
-                            </div>
-                          </div>
-                          <div class="box-body">
-                            <div class="direct-chat-messages">
-                              <div class="direct-chat-msg">
-                                <div class="direct-chat-info clearfix">
-                                  <span class="direct-chat-name pull-left">Zeca Ciclista</span>
-                                  <span class="direct-chat-timestamp pull-right">23 Jan 14:00</span>
-                                </div>
-                                <img class="direct-chat-img" src="static/dist/img/user1-128x128.jpg" alt="message user image">
-                                <div class="direct-chat-text">
-                                  Boa tarde! Gostaria de solicitar um orçamento?
-                                </div>
-                              </div>
-                              <div class="direct-chat-msg right">
-                                <div class="direct-chat-info clearfix">
-                                  <span class="direct-chat-name pull-right">Oficina do João</span>
-                                  <span class="direct-chat-timestamp pull-left">23 Jan 14:05 </span>
-                                </div>
-                                <img class="direct-chat-img" src="static/dist/img/user3-128x128.jpg" alt="message user image">
-  
-                                <div class="direct-chat-text">
-                                  Boa tarde! Claro! Em que posso ajudar?
-                                </div>
-                              </div>
-                              <div class="direct-chat-msg">
-                                <div class="direct-chat-info clearfix">
-                                  <span class="direct-chat-name pull-left">Zeca Ciclista</span>
-                                  <span class="direct-chat-timestamp pull-right">23 Jan 15:37</span>
-                                </div>
-                                <img class="direct-chat-img" src="static/dist/img/user1-128x128.jpg" alt="message user image">
-  
-                                <div class="direct-chat-text">
-                                  Gostaria de valor para troca de freio e pneu.
-                                </div>
-                              </div>
-                              <div class="direct-chat-msg right">
-                                <div class="direct-chat-info clearfix">
-                                  <span class="direct-chat-name pull-right">Oficina do João</span>
-                                  <span class="direct-chat-timestamp pull-left">23 Jan 16:10</span>
-                                </div>
-                                <img class="direct-chat-img" src="static/dist/img/user3-128x128.jpg" alt="message user image">
-  
-                                <div class="direct-chat-text">
-                                  Vamos fazer o levantamento e te passamos os valores.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="direct-chat-contacts">
-
-
-
-
-                              <ul class="contacts-list">
-                                  
-                                {%for chat in chats%}
-                                <li>
-                                  <a href="#">
-                                    {{ chat.idOficina }}
-                                  </a>
-                                </li>
-                                {%endfor%}
-                                
-                              </ul>
-
-
-
-
-                            </div>
-                          </div>
-                          <div class="box-footer">
-                            <form action="#" method="post">
-                              <div class="input-group">
-                                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                                <span class="input-group-btn">
-                                      <button type="button" class="btn btn-warning btn-flat">Enviar</button>
-                                    </span>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box box-info">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- DIRECT CHAT -->
+                <div class="box box-warning direct-chat direct-chat-warning direct-chat-contacts-open">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Últimas OS</h3>
-        
-                      <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        
-                      </div>
+                        <h3 class="box-title">Chat</h3>
+
+                        <div class="box-tools pull-right">
+                            <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 Novas Mensagens">3</span>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
+                                <i class="fa fa-comments"></i></button>
+
+                        </div>
                     </div>
                     <div class="box-body">
-                      <div class="table-responsive">
-                        <table class="table no-margin">
-                          <thead>
-                          <tr>
+                        
+                        
+                        <div class="direct-chat-messages">
+                            
+                            
+                            {%for msg in mensagens%}
+
+                            {% if msg.emissor == oficina.email %}
+                            <div class="direct-chat-msg">
+                                <div class="direct-chat-info clearfix">
+                                    <span class="direct-chat-name pull-left">{{msg.emissor}}</span>
+                                    <span class="direct-chat-timestamp pull-right">{{msg.data}}</span>
+                                </div>
+                                <div class="direct-chat-text">
+                                    {{msg.mensagem}}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if msg.emissor != oficina.email %}
+                            <div class="direct-chat-msg right">
+                                <div class="direct-chat-info clearfix">
+                                    <span class="direct-chat-name pull-right">{{msg.emissor}}</span>
+                                    <span class="direct-chat-timestamp pull-left">{{msg.data}}</span>
+                                </div>
+                                <div class="direct-chat-text">
+                                    {{msg.mensagem}}
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            {%endfor%}
+                        
+                        </div>
+                        <div class="direct-chat-contacts">
+
+                            <ul class="contacts-list">
+
+                                {%for chat in chats%}
+                                <li>
+                                    <a href="/dashboard/chat/{{chat.id}}">
+                                    {{ chat.idCliente }}
+                                    </a>
+                                </li>
+                                {%endfor%}
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        
+                        
+                        
+                        <form action="enviarMensagem" method="post">
+                            <div class="input-group">
+                                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-warning btn-flat">Enviar</button>
+                                </span>
+                            </div>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Últimas OS</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="table-responsive">
+                <table class="table no-margin">
+                    <thead>
+                        <tr>
                             <th>Ordem de Serviço</th>
                             <th>Data</th>
                             <th>Preço</th>
                             <th>Status</th>
-                          </tr>
-                          </thead>
-                          <tbody>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                              {%for os in ordemServicos%}
-                                <tr>
-                                  <td>{{ os.id }}</a></td>
-                                  <td>{{ os.data }}</td>
-                                  <td>{{ os.precoTotal }}</td>
-                                  <td>{{ os.status }}</td>
-                                  <td>
-                                  </td>
-                                </tr>
-                              {%endfor%}
+                        {%for os in ordemServicos%}
+                        <tr>
+                            <td>{{ os.id }}</td>
+                            <td>{{ os.data }}</td>
+                            <td>{{ os.precoTotal }}</td>
+                            <td>{{ os.status }}</td>
+                        </tr>
+                        {%endfor%}
 
-                          
-                          
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box box-info">
-                      <div class="box-header with-border">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box box-info">
+        <div class="box-header with-border">
 
-                        <h3 class="box-title">Produtos adicionados recente</h3>
-                        <div class="box-tools pull-right">
-                          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                          </button>
-                          
-                        </div>
-                      </div>
-                      <div class="box-body" style="">
-                        <div class="table-responsive">
-                          <table class="table no-margin">
-                            <thead>
-                            <tr>
-                              <th>Produto adicionado</th>
-                              <th>Descrição</th>
-                              <th>Valor</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            
-{%for produto in produtos%}
-<tr>
-  <td>{{produto.nome}}</td>
-  <td>{{produto.descricao}}</td>
-  <td><span class="label label-success">{{produto.preco}}</span></td>
-  <td>
-  </td>
-</tr>
-{%endfor%}
+            <h3 class="box-title">Produtos adicionados recente</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
 
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </div>
-                </section>
-                
-              </div>
-            </section>
-          </div>
-          {% endblock %}
-          <!-- <footer>   
-          </footer>
-        <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="/static/bower_components/fastclick/lib/fastclick.js"></script>
-        <script src="static/dist/js/adminlte.min.js"></script>
-        <script src="static/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-        <script src="static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="static/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="static/bower_components/chart.js/Chart.js"></script>
-        <script src="static/dist/js/pages/dashboard2.js"></script>
-        <script src="static/dist/js/demo.js"></script>
-        <div class="jvectormap-label"></div></body> -->
+            </div>
+        </div>
+        <div class="box-body" style="">
+            <div class="table-responsive">
+                <table class="table no-margin">
+                    <thead>
+                        <tr>
+                            <th>Produto adicionado</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Deletar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {%for produto in produtos%}
+                        <tr>
+                            <td>{{produto.nome}}</td>
+                            <td>{{produto.descricao}}</td>
+                            <td><span class="label label-success">{{produto.preco}}</span></td>
+                            <td><a href="#"><span class="label label-danger">x</span></a></td></td>
+                        </tr>
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
